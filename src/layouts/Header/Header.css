@@ -1,0 +1,122 @@
+/* Header Styling */
+header {
+  background-color: #efefed; /* Light background color */
+  border-bottom: 1px solid #e0e0e0; /* Light bottom border */
+  padding: 0.5rem 1rem; /* Adjust padding */
+  position: sticky; /* Makes the header sticky */
+  top: 0; /* Sticks at the top of the page */
+  z-index: 1000; /* Ensures the header is above other content */
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Space between logo and tabs */
+  align-items: center; /* Center items vertically */
+  flex-wrap: wrap; /* Enable wrapping for smaller screens */
+}
+
+/* Logo Styling */
+.logo img {
+  height: 80px; /* Logo height */
+  width: auto; /* Maintain aspect ratio */
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none; /* Hidden by default */
+  font-size: 3rem; /* Size of the hamburger icon */
+  cursor: pointer;
+}
+
+/* Active class */
+.active {
+  padding: 10px 15px;
+  background-color: #322fee;
+  border-radius: 30px;
+  color: #fff;
+}
+
+/* Black Active class */
+.black {
+  padding: 10px 15px;
+  background-color: #000;
+  border-radius: 30px;
+  color: #fff;
+}
+
+/* Navigation List Styling */
+.tab-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem; /* Spacing between items */
+}
+
+/* Individual List Item Styling */
+.tab-items {
+  font-size: 1.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding-top: 10px;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Mobile Menu Styling */
+.mobile-menu {
+  position: fixed; /* Position it fixed on the screen */
+  top: 0;
+  right: -100%; /* Start off-screen */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: #ffffff; /* White background */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* Shadow effect */
+  padding: 2rem; /* Padding around */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* When the menu is open */
+.mobile-menu.open {
+  transform: translateX(-100%); /* Slide in from the right */
+}
+
+/* Close Icon */
+.close-icon {
+  font-size: 4.2rem; /* Size of close icon */
+  cursor: pointer; /* Change cursor */
+  margin-bottom: 1rem; /* Space below the close icon */
+}
+
+/* Responsive Design */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 768px) {
+  .tab-list {
+    gap: 1rem; /* Reduced gap */
+    font-size: 0.9rem; /* Slightly smaller font size */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger icon */
+  }
+
+  .tab-list.desktop {
+    display: none; /* Hide tab items in mobile view */
+  }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 576px) {
+  .navbar {
+    flex-direction: row; /* Stack items vertically */
+  }
+
+  .logo {
+    margin-bottom: 1rem; /* Space below the logo */
+  }
+
+  .tab-list {
+    flex-direction: column; /* Stack navigation items vertically */
+    align-items: center; /* Center items */
+    gap: 0.5rem; /* Reduced gap */
+  }
+}
