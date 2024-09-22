@@ -135,7 +135,7 @@
   }
 
   .footer-social-media {
-    flex-direction: column; /* Stack icons vertically */
+    flex-direction: row; /* Stack icons vertically */
     gap: 1rem; /* Adjust gap */
   }
 
@@ -144,7 +144,7 @@
   }
 
   .top-heading {
-    font-size: 2rem; /* Adjust heading size */
+    font-size: 3.5rem; /* Adjust heading size */
   }
 
   .footer-top {
