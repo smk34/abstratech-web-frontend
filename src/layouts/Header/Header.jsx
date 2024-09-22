@@ -26,7 +26,7 @@ const Header = () => {
           <ul className="tab-list desktop">
             <li
               className={`tab-items ${activeTab === "Home" ? "active" : ""}`}
-              onClick={() => handleTabClick("HOME")}
+              onClick={() => handleTabClick("Home")}
             >
               Home
             </li>
@@ -34,7 +34,7 @@ const Header = () => {
               className={`tab-items ${
                 activeTab === "Portfolio" ? "active" : ""
               }`}
-              onClick={() => handleTabClick("PORTFOLIO")}
+              onClick={() => handleTabClick("Portfolio")}
             >
               Portfolio
             </li>
@@ -42,17 +42,17 @@ const Header = () => {
               className={`tab-items ${
                 activeTab === "Services" ? "active" : ""
               }`}
-              onClick={() => handleTabClick("SERVICES")}
+              onClick={() => handleTabClick("Services")}
             >
               Services
             </li>
             <li
               className={`tab-items ${activeTab === "Contact" ? "active" : ""}`}
-              onClick={() => handleTabClick("CONTACT")}
+              onClick={() => handleTabClick("Contact")}
             >
               Contact
             </li>
-            <li className="tab-items black">MENU</li>
+            <li className="tab-items black">Menu</li>
           </ul>
         </div>
         {/* Hamburger Menu Icon */}
@@ -67,7 +67,7 @@ const Header = () => {
           &times; {/* Close icon */}
         </div>
         <ul className="tab-list">
-          {["HOME", "PORTFOLIO", "SERVICES", "CONTACT"].map((tab) => (
+          {["Home", "Portfolio", "Services", "Contact"].map((tab) => (
             <li
               key={tab}
               className={`tab-items ${activeTab === tab ? "active" : ""}`}
