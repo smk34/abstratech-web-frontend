@@ -81,7 +81,7 @@ header {
 
 /* Close Icon Styling */
 .close-icon {
-  font-size: 2rem;
+  font-size: 5rem;
   padding: 1rem;
   cursor: pointer;
   text-align: right;
@@ -122,6 +122,6 @@ header {
   }
 
   .hamburger {
-    font-size: 1.8rem; /* Adjust size */
+    font-size: 3rem; /* Adjust size */
   }
 }

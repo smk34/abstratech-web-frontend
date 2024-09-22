@@ -37,7 +37,7 @@
 
 .footer-list-items {
   font-size: 2rem; /* Slightly larger font size */
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer; /* Pointer cursor */
   transition: color 0.3s ease; /* Smooth color transition on hover */
 }
