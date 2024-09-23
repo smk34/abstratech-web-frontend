@@ -28,48 +28,7 @@
 }
 
 /* Hero Section */
-/* .hero-top {
-  padding: 3rem 2rem;
-  text-align: center;
-}
-.hero-top h1 {
-  font-size: 7rem;
-}
 
-.top-content {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 3rem;
-  padding: 2.2rem;
-}
-
-.content-left, .content-right {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 2rem;
-}
-
-.content-left p > span{
-  margin-right: 3rem;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-.content-right p > span{
-  margin-right: 3rem;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-.bottom-content {
-  padding-left: 2.2rem;
-}
-.bottom-content p {
-  font-size: 2rem;
-  font-weight: 700;
-} */
-/* Hero Section Styling */
-/* Hero Section Styling */
 .hero-top {
   padding: 3rem 2rem;
   text-align: center;
