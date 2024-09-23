@@ -1,7 +1,6 @@
 /* Header Styling */
 header {
   background-color: #efefed; /* Light background color */
-  border-bottom: 1px solid #e0e0e0; /* Light bottom border */
   padding: 0.5rem 1rem; /* Adjust padding */
   position: sticky; /* Makes the header sticky */
   top: 0; /* Sticks at the top of the page */
