@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "../../assets/logo.jpeg";
+// import Logo from "../../assets/logo.jpeg";
 import "./Header.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 
@@ -20,7 +20,8 @@ const Header = () => {
     <header>
       <nav className="navbar sticky-top">
         <div className="logo">
-          <img src={Logo} alt="logo" />
+          {/* <img src={Logo} alt="logo" /> */}
+          <h1>Abstertek</h1>
         </div>
         <div className="tab">
           <ul className="tab-list desktop">

@@ -14,12 +14,16 @@ header {
   justify-content: space-between; /* Space between logo and tabs */
   align-items: center; /* Center items vertically */
   flex-wrap: wrap; /* Enable wrapping for smaller screens */
+  padding: 15px 22px;
 }
 
 /* Logo Styling */
-.logo img {
-  height: 80px; /* Logo height */
-  width: auto; /* Maintain aspect ratio */
+/* .logo img {
+  height: 80px; 
+  width: auto; 
+} */
+.logo h1 {
+  font-size: 3.5rem;
 }
 
 /* Active class */
