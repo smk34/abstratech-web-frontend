@@ -4,6 +4,7 @@ import Footer from "../layouts/Footer/Footer";
 import "../../src/index.css";
 import { FaStar, FaArrowRight } from "react-icons/fa";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
+import promoVideo from "../assets/Abstertek_LOGO_RENDER.mp4"; // Correct video import
 
 const HomePage = () => {
   return (
@@ -20,14 +21,15 @@ const HomePage = () => {
             <Parallax
               className="promo-section top-center-parallax"
               speed={-10}
-              scaleX={[0.1, 1]} // Scaling from 20% (0.2) to 100% (1)
+              scaleX={[0.1, 1]} // Scaling from 20% to 100%
               translateY={["-80px", "0px"]}
             >
               <div className="promo-content full-screen-video">
+                {/* Updated the MIME type to match the .webm file */}
                 <video width="100%" height="100%" controls loop autoPlay muted>
                   <source
-                    src="https://www.w3schools.com/html/mov_bbb.mp4"
-                    type="video/mp4"
+                    src={promoVideo}
+                    type="video/mp4" // Updated type
                   />
                   Your browser does not support the video tag.
                 </video>
