@@ -1,0 +1,130 @@
+/* Header Styling */
+header {
+  background-color: #efefed; /* Light background color */
+  padding: 0.5rem 1rem; /* Adjust padding */
+  position: sticky; /* Makes the header sticky */
+  top: 0; /* Sticks at the top of the page */
+  z-index: 1000; /* Ensures the header is above other content */
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Space between logo and tabs */
+  align-items: center; /* Center items vertically */
+  flex-wrap: wrap; /* Enable wrapping for smaller screens */
+  padding: 15px 22px;
+}
+
+/* Logo Styling */
+/* .logo img {
+  height: 80px; 
+  width: auto; 
+} */
+.logo h1 {
+  font-size: 3.5rem;
+}
+
+/* Active class */
+.active {
+  padding: 10px 15px;
+  background-color: #322fee;
+  border-radius: 30px;
+  color: #fff;
+}
+
+/* Black Active class */
+.black {
+  padding: 10px 15px;
+  background-color: #000;
+  border-radius: 30px;
+  color: #fff;
+}
+
+/* Navigation List Styling */
+.tab-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem; /* Spacing between items */
+}
+
+/* Individual List Item Styling */
+.tab-items {
+  font-size: 1.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding-top: 10px;
+  transition: color 0.3s ease; /* Smooth color transition */
+  text-transform: uppercase; /* Make all text uppercase */
+}
+
+/* Hamburger Icon Styling */
+.hamburger {
+  display: none; /* Hidden by default */
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Mobile Menu Styling */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Hide off-screen by default */
+  width: 75%; /* Adjust width */
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease; /* Smooth sliding effect */
+  z-index: 999; /* Ensure it's above other content */
+}
+
+.mobile-menu.open {
+  right: 0; /* Slide in from the right */
+}
+
+/* Close Icon Styling */
+.close-icon {
+  font-size: 5rem;
+  padding: 1rem;
+  cursor: pointer;
+  text-align: right;
+}
+
+/* Mobile Menu Tab List Styling */
+.mobile-menu .tab-list {
+  flex-direction: column; /* Stack vertically */
+  padding: 2rem;
+}
+
+.mobile-menu .tab-items {
+  font-size: 2rem; /* Larger font for mobile */
+  margin-bottom: 1rem; /* Space between items */
+}
+
+/* Responsive Design */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 768px) {
+  .desktop {
+    display: none; /* Hide desktop tabs on medium screens */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger icon */
+  }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 576px) {
+  .navbar {
+    flex-direction: row; /* Adjust direction */
+  }
+
+  .logo {
+    margin-bottom: 0; /* Remove extra space */
+  }
+
+  .hamburger {
+    font-size: 3rem; /* Adjust size */
+  }
+}

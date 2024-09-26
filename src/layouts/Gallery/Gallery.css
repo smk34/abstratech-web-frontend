@@ -1,0 +1,74 @@
+/* Gallery Section Styling */
+.gallery-section {
+  padding: 2rem 1rem;
+  text-align: center; /* Center-align content */
+}
+
+/* Gallery Heading Styling */
+.gallery-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.gallery-heading:hover {
+  color: #555; /* Change color on hover */
+}
+
+/* Gallery Container Styling */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+  gap: 1.5rem; /* Space between items */
+  padding: 0 2rem; /* Padding on left and right */
+}
+
+/* Individual Gallery Item Styling */
+.gallery-item {
+  overflow: hidden; /* Hide overflow */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.gallery-item:hover {
+  transform: scale(1.05); /* Slightly scale up on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+/* Gallery Image Styling */
+.gallery-image {
+  width: 100%; /* Full width of container */
+  height: auto; /* Auto height to maintain aspect ratio */
+  display: block; /* Block display for proper spacing */
+}
+
+/* Responsive Design */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 768px) {
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    padding: 0 1rem; /* Reduced padding */
+  }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 576px) {
+  .gallery-container {
+    grid-template-columns: 1fr; /* 1 item per row */
+    padding: 0; /* Remove padding */
+  }
+
+  .gallery-heading {
+    font-size: 2rem; /* Smaller heading size */
+  }
+
+  .gallery-item {
+    margin-bottom: 1rem; /* Space between items */
+  }
+}
