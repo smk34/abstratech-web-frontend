@@ -27,7 +27,6 @@
   line-height: 4;
 }
 
-/* Hero Section */
 
 .hero-top {
   padding: 3rem 2rem;
@@ -35,7 +34,7 @@
   animation: fadeIn 1s ease-in-out forwards;
 }
 .hero-top h1 {
-  font-size: 7rem;
+  font-size: 10rem;
   line-height: 1.1;
   animation: slideIn 1s ease-in-out forwards;
 }
@@ -74,7 +73,7 @@
   font-weight: 700;
 }
 
-/* Button Styling */
+
 .btn-container {
   display: flex;
   justify-content: start;
@@ -90,7 +89,7 @@
   font-size: 2rem;
   font-weight: 600;
   color: #fff;
-  background-color: #322fee; /* Customize the button color */
+  background-color: #322fee;
   border: none;
   border-radius: 3rem;
   text-decoration: none;
@@ -98,15 +97,14 @@
 }
 
 .cta-btn:hover {
-  background-color: #0056b3; /* Darker shade for hover effect */
+  background-color: #0056b3;
 }
 
 .cta-btn svg {
-  margin-left: 1rem; /* Space between text and icon */
-  font-size: 2rem; /* Adjust icon size if necessary */
+  margin-left: 1rem; 
+  font-size: 2rem;
 }
 
-/* Keyframe Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -151,7 +149,6 @@
   }
 }
 
-/* Responsive Styling */
 @media (max-width: 1200px) {
   .hero-top h1 {
     font-size: 6rem;
@@ -229,3 +226,6 @@
     padding: 0.7rem 1rem;
   }
 }
+
+
+
