@@ -27,7 +27,12 @@
   line-height: 4;
 }
 
-
+/* Hero */
+.hero {
+  position: relative;
+  /* padding: 50px 20px;
+  text-align: center; */
+}
 .hero-top {
   padding: 3rem 2rem;
   text-align: center;
@@ -37,6 +42,28 @@
   font-size: 10rem;
   line-height: 1.1;
   animation: slideIn 1s ease-in-out forwards;
+  position: relative;
+  z-index: 0;
+}
+
+/* Style for parallax promo section */
+.promo-section {
+  position: absolute;
+  top: 20%; /* Adjust the overlay to position it on the h1 */
+  left: 27%;
+  transform: translate(-50%, -50%); /* Centering */
+  width: 60vw; /* Make width responsive */
+  height: 30vw; /* Make height responsive */
+  max-width: 600px; /* Ensure it doesn't get too large */
+  max-height: 300px;
+  z-index: 1;
+}
+
+.promo-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .top-content {
@@ -176,6 +203,12 @@
     padding: 1rem;
   }
 
+  .promo-section {
+    top: 25%;
+    width: 80vw;
+    height: 40vw;
+  }
+
   .content-left p > span,
   .content-right p > span {
     margin-right: 1.5rem;
@@ -199,6 +232,13 @@
 
   .hero-top h1 {
     font-size: 3rem;
+  }
+
+  .promo-section {
+    top: 30%;
+    left: 5%;
+    width: 90vw;
+    height: 50vw;
   }
 
   .top-content {
@@ -228,4 +268,357 @@
 }
 
 
+/* Partners */
+.partner-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 7rem 2rem;
+  flex-wrap: wrap; /* Allow the items to wrap for small screens */
+  gap: 1.5rem; /* Add some space between the images */
+}
 
+.partner {
+  width: 100%;
+  height: 100%;
+  max-width: 10rem;
+  max-height: 10rem;
+  object-fit: contain; /* Ensures the logos maintain aspect ratio */
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .partner-list {
+    padding: 5rem 1rem;
+    justify-content: space-around; /* Adjust spacing for medium screens */
+  }
+
+  .partner {
+    max-width: 8rem;
+    max-height: 8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .partner-list {
+    padding: 4rem 1rem;
+    justify-content: center;
+  }
+
+  .partner {
+    max-width: 7rem;
+    max-height: 7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .partner-list {
+    /* flex-direction: column; Stack the images vertically for smaller screens */
+    padding: 2rem 1rem;
+    flex-wrap: wrap;
+  }
+
+  .partner {
+    max-width: 6rem;
+    max-height: 6rem;
+  }
+}
+
+
+/* Mission */
+
+.mission {
+  padding: 15rem 3rem;
+}
+.mission-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* Allows positioning of the link container */
+}
+.description {
+  width: 100%;
+  height: 100%;
+  max-width: 50%;
+}
+
+.mission-top h2{
+  font-size: 2rem;
+  line-height: 3;
+}
+.description h1{
+  font-size: 4rem;
+  line-height: 1.5;
+  margin-bottom: 0; /* Remove bottom margin to prevent spacing issues */
+  position: relative; /* Allows positioning of pseudo-element */
+}
+
+.link {
+  position: absolute;
+  bottom: 0; /* Align the link vertically with the last line of the h1 */
+  right: 0;  /* Adjust alignment according to your layout needs */
+}
+.link a {
+ font-size: 2rem;
+ color: #000;
+ font-weight: 700;
+ display: flex;
+  align-items: center;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .mission {
+    padding: 8rem 2rem;
+  }
+
+  .description h1 {
+    font-size: 3.5rem;
+  }
+
+  .link {
+    right: 2rem; /* Adjust right position for smaller screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .mission {
+    padding: 6rem 2rem;
+  }
+
+  .description h1 {
+    font-size: 3rem;
+  }
+
+  .mission-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .link {
+    position: static; /* Remove absolute positioning */
+    margin-top: 2rem; /* Add space between description and link */
+  }
+}
+
+@media (max-width: 768px) {
+  .mission {
+    padding: 5rem 1.5rem;
+  }
+
+  .description {
+    max-width: 100%; /* Make description take full width on small screens */
+  }
+
+  .description h1 {
+    font-size: 2.5rem;
+  }
+
+  .link a {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mission {
+    padding: 4rem 1rem;
+  }
+
+  .description h1 {
+    font-size: 2rem;
+  }
+
+  .link a {
+    font-size: 1.6rem;
+  }
+}
+
+/* Animation */
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Applying animations */
+.mission-top h2 {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.description h1 {
+  animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+.link {
+  animation: slideInRight 1.4s ease-in-out forwards;
+  opacity: 0; /* Initial state before animation */
+}
+
+/* Add delay for staggered animation effect */
+.mission-bottom .description h1 {
+  animation-delay: 0.5s;
+}
+
+.mission-bottom .link {
+  animation-delay: 1s;
+}
+
+/* Responsive animation tweaks */
+@media (max-width: 992px) {
+  .link {
+    animation: fadeIn 1.4s ease-in-out forwards;
+  }
+}
+
+/* Work Section */
+.work-section {
+  padding: 15rem 3rem;
+  text-align: center;
+}
+
+.work-heading {
+  font-size: 25rem;
+  margin-bottom: 20rem;
+}
+
+/* Image container styles */
+.work-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15rem;
+}
+
+/* Individual image with overlay */
+.work-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 106.4rem;
+  max-height: 80rem;
+  border-radius: 4rem;
+  overflow: hidden;
+}
+
+.work-image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+/* Overlay card */
+.image-overlay {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  width: 40rem;
+  height: 14.9rem;
+  background-color: rgb(50,47,238);
+  color: white;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.overlay-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.overlay-description {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+.overlay-link {
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Button */
+.view-more-btn {
+  margin: 5rem auto;
+  background-color: transparent;
+  color: #000;
+  padding: 1.5rem 3rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border: 0.2rem solid #ccc;
+  border-radius: 10rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 106.4rem;
+}
+
+.view-more-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.tilted-arrow {
+  margin-left: 0.5rem;
+  transform: rotate(-45deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .work-heading {
+    font-size: 2rem;
+  }
+
+  .image-overlay {
+    width: 30rem;
+    height: auto;
+  }
+
+  .view-more-btn {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .work-heading {
+    font-size: 8rem;
+  }
+
+  .image-overlay {
+    width: 25rem;
+    padding: 0.5rem;
+  }
+
+  .view-more-btn {
+    font-size: 0.9rem;
+  }
+}
