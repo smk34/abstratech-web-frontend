@@ -1,40 +1,77 @@
+import { useEffect, useState, useRef } from "react";
+import { ParallaxProvider, Parallax } from "react-scroll-parallax";
+import { FaStar, FaArrowRight, FaChevronRight } from "react-icons/fa";
 import React from "react";
 import Header from "../layouts/Header/Header";
 import Footer from "../layouts/Footer/Footer";
 import "../../src/index.css";
-import { FaStar, FaArrowRight } from "react-icons/fa";
-import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import promoVideo from "../assets/Abstertek_LOGO_RENDER.mp4"; // Correct video import
 import partnerLogo from "../assets/partner1.jpg"; // Correct import import
-import workBg from "../assets/workBg.jpg"
-import { FaChevronRight } from "react-icons/fa6";
-
+import workBg from "../assets/workBg.jpg";
 const HomePage = () => {
+  const headingRef = useRef(null);
+  const buttonRef = useRef(null);
+  const [isHeadingVisible, setIsHeadingVisible] = useState(true);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setIsHeadingVisible(entry.isIntersecting);
+      },
+      {
+        root: null, // observe within the viewport
+        threshold: 0.1, // trigger when 10% of the heading is visible
+      }
+    );
+
+    if (headingRef.current) {
+      observer.observe(headingRef.current);
+    }
+
+    return () => {
+      if (headingRef.current) {
+        observer.unobserve(headingRef.current);
+      }
+    };
+  }, []);
+
   return (
     <ParallaxProvider>
       <Header />
       <main>
         {/* Hero Section */}
         <section className="hero">
-          <div className="hero-top">
+          <div className="hero-top" ref={headingRef}>
             <h1>
               AWARD WINNING <br /> SOFTWARE DEV <br /> STUDIO
             </h1>
 
             {/* Parallax Promo Video overlaying h1 */}
-            <Parallax
-              className="promo-section"
-              speed={-5} // Adjust speed as necessary for subtle effect
-              scale={[0.5, 1]} // Start with 50% size, scale to 100% on scroll
-              translateY={["-50px", "0px"]}
-            >
-              <div className="promo-overlay">
-                <video width="100%" height="100%" controls loop autoPlay muted>
-                  <source src={promoVideo} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </Parallax>
+            {isHeadingVisible && (
+              <Parallax
+                className="promo-section"
+                speed={-5}
+                scale={[0.75, 1]} 
+                translateY={["-50px", "0px"]}
+              >
+                <div className="promo-overlay">
+                  <div className="video-container">
+                    <video
+                      width="100%"
+                      height="100%"
+                      controls
+                      loop
+                      autoPlay
+                      muted
+                    >
+                      <source src={promoVideo} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+              </Parallax>
+            )}
           </div>
 
           <div className="hero-bottom">
@@ -80,15 +117,25 @@ const HomePage = () => {
               </p>
             </div>
             {/* Button Section */}
-            <div className="btn-container">
+            <div className="btn-container" ref={buttonRef}>
               <a href="#" className="cta-btn">
                 LET&#39;S TALK <FaArrowRight />
               </a>
             </div>
+
+            {/* Conditionally render the video beneath the button */}
+            {!isHeadingVisible && (
+              <div className="video-container">
+                <video width="100%" height="100%" controls loop autoPlay muted>
+                  <source src={promoVideo} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            )}
           </div>
         </section>
 
-        {/* partners section */}
+        {/* Partners Section */}
         <section className="partner-list">
           <img className="partner" src={partnerLogo} alt="p1" />
           <img className="partner" src={partnerLogo} alt="p2" />
@@ -97,7 +144,7 @@ const HomePage = () => {
           <img className="partner" src={partnerLogo} alt="p5" />
         </section>
 
-        {/* Mission */}
+        {/* Mission Section */}
         <section className="mission">
           <div className="mission-top">
             <h2>MISSION STATEMENT</h2>
@@ -109,7 +156,6 @@ const HomePage = () => {
                 our experience in the blockchain and Web3 industry to help grow
                 and shape your ideas into reality.
               </h1>
-              -
             </div>
             <div className="link">
               <a href="">
@@ -119,7 +165,7 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Work */}
+        {/* Work Section */}
         <section className="work-section">
           <h2 className="work-heading">WORK</h2>
 
@@ -127,7 +173,6 @@ const HomePage = () => {
             {[1, 2, 3].map((item) => (
               <div key={item} className="work-image-container">
                 <img
-                  // src={`https://via.placeholder.com/1064x800.png?text=Project+${item}`}
                   src={workBg}
                   alt={`Project ${item}`}
                   className="work-image"
