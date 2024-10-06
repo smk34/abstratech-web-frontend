@@ -1,13 +1,14 @@
 import { useEffect, useState, useRef } from "react";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 import { FaStar, FaArrowRight, FaChevronRight } from "react-icons/fa";
-import React from "react";
 import Header from "../layouts/Header/Header";
 import Footer from "../layouts/Footer/Footer";
+import Services from "../layouts/Services/Services";
 import "../../src/index.css";
 import promoVideo from "../assets/Abstertek_LOGO_RENDER.mp4"; // Correct video import
 import partnerLogo from "../assets/partner1.jpg"; // Correct import import
 import workBg from "../assets/workBg.jpg";
+
 const HomePage = () => {
   const headingRef = useRef(null);
   const buttonRef = useRef(null);
@@ -52,7 +53,7 @@ const HomePage = () => {
               <Parallax
                 className="promo-section"
                 speed={-5}
-                scale={[0.75, 1]} 
+                scale={[0.75, 1]}
                 translateY={["-50px", "0px"]}
               >
                 <div className="promo-overlay">
@@ -196,6 +197,11 @@ const HomePage = () => {
             </button>
           </div>
         </section>
+
+        {/* Service */}
+        <Services />
+
+        {/* Reviews */}
       </main>
       <Footer />
     </ParallaxProvider>
