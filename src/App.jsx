@@ -1,6 +1,8 @@
 import React from 'react'
 import './App.css'
-import HomePage from './components/HomePage'
+import HomePage from './components/HomePage';
+import Portfolio from './components/Portfolio';
+import Services from "./components/Services";
 
 
 // import { Route, Routes } from 'react-router-dom'
@@ -17,6 +19,24 @@ function App() {
           element={
             // <RequireAuth>
               <HomePage />
+            // </RequireAuth>
+          }
+          // loader={<Loader />}
+        />
+        <Route
+          path="/portfolio"
+          element={
+            // <RequireAuth>
+              <Portfolio />
+            // </RequireAuth>
+          }
+          // loader={<Loader />}
+        />
+        <Route
+          path="/services"
+          element={
+            // <RequireAuth>
+              <Services />
             // </RequireAuth>
           }
           // loader={<Loader />}

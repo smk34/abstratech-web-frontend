@@ -9,10 +9,47 @@ import promoVideo from "../assets/Abstertek_LOGO_RENDER.mp4"; // Correct video i
 import partnerLogo from "../assets/partner1.jpg"; // Correct import import
 import workBg from "../assets/workBg.jpg";
 
+// dummy review
+const reviews = [
+  {
+    id: 1,
+    quote:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ipsa modi quis aliquid tenetur eaque quisquam itaque aspernatur atque rem?",
+    service: "WEB DEVELOPMENT",
+    // name: "John Doe",
+    designation: "CEO",
+    company: "TECH SOLUITIONS",
+  },
+  {
+    id: 2,
+    quote:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ipsa modi quis aliquid tenetur eaque quisquam itaque aspernatur atque rem?",
+    service: "APP DEVELOPMENT",
+    // name: "Jane Smith",
+    designation: "CTO",
+    company: "APP INNOVATORS",
+  },
+  {
+    id: 3,
+    quote:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ipsa modi quis aliquid tenetur eaque quisquam itaque aspernatur atque rem?",
+    service: "UI/UX DESIGN",
+    // name: "Mike Johnson",
+    designation: "PRODUCT MANAGER",
+    company: "DESIGN EXPERTS",
+  },
+];
+
 const HomePage = () => {
   const headingRef = useRef(null);
   const buttonRef = useRef(null);
   const [isHeadingVisible, setIsHeadingVisible] = useState(true);
+
+  // Review states
+  const [currentReview, setCurrentReview] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const sliderRef = useRef(null);
+  const startPos = useRef(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,6 +73,42 @@ const HomePage = () => {
       }
     };
   }, []);
+
+  // Review Section Code
+  // Auto-slide every 5 seconds
+  useEffect(() => {
+    const autoSlide = setInterval(() => {
+      setCurrentReview((prevReview) => (prevReview + 1) % reviews.length);
+    }, 5000);
+
+    return () => clearInterval(autoSlide);
+  }, []);
+
+  const handleDragStart = (e) => {
+    setIsDragging(true);
+    startPos.current = e.clientX || e.touches[0].clientX;
+  };
+
+  const handleDragEnd = (e) => {
+    setIsDragging(false);
+  };
+
+  const handleDragMove = (e) => {
+    if (!isDragging) return;
+
+    const currentX = e.clientX || e.touches[0].clientX;
+    const delta = startPos.current - currentX;
+
+    if (delta > 50) {
+      setCurrentReview((prevReview) => (prevReview + 1) % reviews.length);
+    } else if (delta < -50) {
+      setCurrentReview(
+        (prevReview) => (prevReview - 1 + reviews.length) % reviews.length
+      );
+    }
+
+    setIsDragging(false);
+  };
 
   return (
     <ParallaxProvider>
@@ -200,6 +273,47 @@ const HomePage = () => {
 
         {/* Service */}
         <Services />
+
+        {/* Reviews */}
+        <section className="review">
+          <h1>REVIEWS</h1>
+          <div
+            className="review-slider"
+            onMouseDown={handleDragStart}
+            onMouseUp={handleDragEnd}
+            onMouseMove={handleDragMove}
+            onTouchStart={handleDragStart}
+            onTouchEnd={handleDragEnd}
+            onTouchMove={handleDragMove}
+            ref={sliderRef}
+          >
+            <div className="review-left">
+              <p>
+                {currentReview + 1} - {reviews.length}
+              </p>
+            </div>
+
+            <div
+              className="review-right"
+              style={{ transform: `translateX(${-currentReview * 100}%)` }}
+            >
+              {reviews.map((review, index) => (
+                <div className="review-content" key={review.id}>
+                  <div className="review-stars">
+                    {[...Array(5)].map((_, i) => (
+                      <FaStar key={i} color="#FFD700" size="2rem" />
+                    ))}
+                  </div>
+                  <p className="review-quote">&quot; {review.quote} &quot;</p>
+                  <p className="review-service">{review.service}</p>
+                  <p className="review-client">
+                    {review.designation} at {review.company}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </ParallaxProvider>

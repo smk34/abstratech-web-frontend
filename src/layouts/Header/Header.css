@@ -17,10 +17,10 @@ header {
 }
 
 /* Logo Styling */
-/* .logo img {
-  height: 80px; 
-  width: auto; 
-} */
+.logo a {
+  text-decoration: none;
+  color: #000;
+}
 .logo h1 {
   font-size: 3.5rem;
 }
@@ -30,16 +30,19 @@ header {
   padding: 10px 15px;
   background-color: #322fee;
   border-radius: 30px;
-  color: #fff;
+}
+
+.active a {
+  color: #fff !important;
 }
 
 /* Black Active class */
-.black {
+/* .black {
   padding: 10px 15px;
   background-color: #000;
   border-radius: 30px;
   color: #fff;
-}
+} */
 
 /* Navigation List Styling */
 .tab-list {
@@ -56,7 +59,14 @@ header {
   padding-top: 10px;
   transition: color 0.3s ease; /* Smooth color transition */
   text-transform: uppercase; /* Make all text uppercase */
+  text-decoration: none;
 }
+
+.tab-items a {
+  text-decoration: none;
+  color: #000;
+}
+
 
 /* Hamburger Icon Styling */
 .hamburger {
