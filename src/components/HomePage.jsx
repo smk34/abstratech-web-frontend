@@ -200,8 +200,6 @@ const HomePage = () => {
 
         {/* Service */}
         <Services />
-
-        {/* Reviews */}
       </main>
       <Footer />
     </ParallaxProvider>
