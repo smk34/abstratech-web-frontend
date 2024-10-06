@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import "./Sevices.css";
+import "./Services.css";
 import { FaChevronRight } from "react-icons/fa";
 
 const ScrollSection = () => {

@@ -1,24 +1,30 @@
-import React from 'react'
-import './App.css'
-import HomePage from './components/HomePage';
-import Portfolio from './components/Portfolio';
+import React from "react";
+import "./App.css";
+import HomePage from "./components/HomePage";
+import Portfolio from "./components/Portfolio";
 import Services from "./components/Services";
 
-
-// import { Route, Routes } from 'react-router-dom'
-
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import About from "./components/About";
 
 function App() {
-
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route
           path="/"
           element={
             // <RequireAuth>
-              <HomePage />
+            <HomePage />
+            // </RequireAuth>
+          }
+          // loader={<Loader />}
+        />
+        <Route
+          path="/about"
+          element={
+            // <RequireAuth>
+            <About />
             // </RequireAuth>
           }
           // loader={<Loader />}
@@ -27,7 +33,7 @@ function App() {
           path="/portfolio"
           element={
             // <RequireAuth>
-              <Portfolio />
+            <Portfolio />
             // </RequireAuth>
           }
           // loader={<Loader />}
@@ -36,7 +42,7 @@ function App() {
           path="/services"
           element={
             // <RequireAuth>
-              <Services />
+            <Services />
             // </RequireAuth>
           }
           // loader={<Loader />}
@@ -189,8 +195,8 @@ function App() {
           loader={<Loader />}
         /> */}
       </Routes>
-    </HashRouter>
-  )
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
