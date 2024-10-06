@@ -126,7 +126,7 @@ const HomePage = () => {
               <Parallax
                 className="promo-section"
                 speed={-5}
-                scale={[0.75, 1]}
+                scale={[0.5, 1]}
                 translateY={["-50px", "0px"]}
               >
                 <div className="promo-overlay">
