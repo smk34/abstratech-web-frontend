@@ -351,7 +351,7 @@
   line-height: 3;
 }
 .description h1{
-  font-size: 4rem;
+  font-size: 3.5rem;
   line-height: 1.5;
   margin-bottom: 0; /* Remove bottom margin to prevent spacing issues */
   position: relative; /* Allows positioning of pseudo-element */
@@ -499,7 +499,7 @@
 }
 
 .work-heading {
-  font-size: 25rem;
+  font-size: 38rem;
   margin-bottom: 20rem;
 }
 

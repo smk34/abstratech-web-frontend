@@ -27,7 +27,7 @@ const ScrollSection = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
+
 
   return (
     <>
@@ -47,11 +47,10 @@ const ScrollSection = () => {
               WEB <br /> DEVELOPMENT
             </h1>
             <p>
-              We are experts in web-based applications and infrastructure
-              development. Our team will work with you to create robust,
-              scalable solutions that drive digital transformation by delivering
-              high-performance applications built with efficiency and security
-              in mind, which will empower your business to thrive.
+              We specialize in developing web-based applications and IT infrastructure.
+              Our team collaborates with you to design scalable, robust solutions that
+              accelerate digital transformation. By delivering secure, high-performance
+              applications, we empower your business to grow and succeed efficiently.
             </p>
           </div>
           <div
@@ -59,14 +58,14 @@ const ScrollSection = () => {
             ref={(el) => (contentSections.current[1] = el)}
           >
             <h1>
-              APP <br /> DEVELOPMENT
+              DIGITAL <br /> MARKETING
             </h1>
             <p>
-              We specialise in creating captivating and feature-rich mobile
-              applications that drive engagement, enhance user experiences, and
-              propel your business forward. Whether native, hybrid or web app,
-              our tailored range of services are designed to meet your unique
-              needs and objectives.
+              We excel in digital arts and marketing, working closely with you to craft
+              creative, impactful solutions that amplify your brand. Our team delivers
+              visually stunning content and strategic campaigns designed to engage your
+              audience, drive growth, and elevate your business in today’s digital
+              landscape.
             </p>
           </div>
           <div
@@ -74,16 +73,14 @@ const ScrollSection = () => {
             ref={(el) => (contentSections.current[2] = el)}
           >
             <h1>
-              GRAPHICS <br /> DESIGNING
+              APP  <br /> DEVELOPMENT
             </h1>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Inventore non soluta culpa sequi corporis! Eius maiores odit
-              corporis sapiente repellendus quis necessitatibus eveniet libero
-              laborum praesentium rerum repudiandae omnis minus culpa corrupti
-              maxime reprehenderit, dolor laboriosam. Harum suscipit expedita
-              reprehenderit? Animi culpa sint laboriosam aperiam, aliquam
-              ratione numquam nulla nam!
+              We specialize in app development, creating intuitive, high-performance
+              mobile and web applications tailored to your business needs. Our team
+              focuses on delivering scalable, secure, and user-friendly apps that enhance
+              customer engagement and drive business growth, ensuring your app stands
+              out in the competitive digital space.
             </p>
           </div>
           <div
@@ -91,15 +88,31 @@ const ScrollSection = () => {
             ref={(el) => (contentSections.current[3] = el)}
           >
             <h1>
-              DIGITAL <br /> MARKETING
+              SOFTWARE <br /> DEVELOPMENT
             </h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Reiciendis reprehenderit quos alias non unde veniam sit aspernatur
-              nobis illo exercitationem, fugiat cupiditate amet repudiandae,
-              similique animi ullam omnis ratione deleniti quisquam. Quo eveniet
-              quis vitae impedit, earum eaque hic similique labore pariatur est
-              accusamus quod inventore et minus ipsum obcaecati?
+              We are experts in software development, building customized, efficient, and
+              scalable solutions to meet your business objectives. Our team combines
+              innovation with technical expertise to deliver high-quality software that
+              enhances productivity, ensures security, and drives sustainable growth for
+              your business.
+            </p>
+
+          </div>
+
+          <div
+            className="content-section"
+            ref={(el) => (contentSections.current[4] = el)}
+          >
+            <h1>
+              AI <br /> DEVELOPMENT
+            </h1>
+            <p>
+              We specialize in AI development, creating intelligent, data-driven solutions
+              that enhance automation and decision-making. Our team harnesses the
+              power of artificial intelligence to build innovative systems that optimize
+              business processes, improve efficiency, and drive smarter outcomes for your
+              organization.
             </p>
 
             <div className="sevice-link">

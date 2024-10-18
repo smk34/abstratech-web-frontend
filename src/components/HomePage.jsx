@@ -14,31 +14,49 @@ const reviews = [
   {
     id: 1,
     quote:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ipsa modi quis aliquid tenetur eaque quisquam itaque aspernatur atque rem?",
-    service: "WEB DEVELOPMENT",
-    // name: "John Doe",
-    designation: "CEO",
-    company: "TECH SOLUITIONS",
+      "I am thrilled with the exceptional website Abstertek created for The Route Seekers! Their team demonstrated professionalism, creativity, and a keen understanding of our vision. The final product exceeds our expectations and is user-friendly. Highly recommended for anyone looking to elevate their online presence",
+    //service: "WEB DEVELOPMENT",
+    name: "Namrita Singh",
+    designation: "Managing Director",
+    company: "The Route Seekers",
   },
   {
     id: 2,
     quote:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ipsa modi quis aliquid tenetur eaque quisquam itaque aspernatur atque rem?",
-    service: "APP DEVELOPMENT",
-    // name: "Jane Smith",
-    designation: "CTO",
-    company: "APP INNOVATORS",
+      "Abstertek has significantly enhanced our digital presence. Their expertise in digital arts has transformed our social media platforms with captivating visuals that engage and resonate with our audience. The team’s creativity and prompt communication make every collaboration a delight. For brands looking to make a lasting impact in the digital space, Abstertek is the ideal partner!”",
+    //service: "APP DEVELOPMENT",
+    name: "Akshat Kacholia",
+    designation: "Managing Director",
+    company: "Royal Color Jewels",
   },
   {
     id: 3,
     quote:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ipsa modi quis aliquid tenetur eaque quisquam itaque aspernatur atque rem?",
-    service: "UI/UX DESIGN",
-    // name: "Mike Johnson",
-    designation: "PRODUCT MANAGER",
-    company: "DESIGN EXPERTS",
+      "Abstertek has been a game-changer for us. Their expertise, technical skills, and creative vision brought our website to life in a way we never thought possible. Without their guidance and attention to detail, we would have struggled to create a platform that truly represents our brand. I can’t thank Classified as Highly Confidenial them enough for their support!",
+    //service: "UI/UX DESIGN",
+    name: "Vaibhav Jha",
+    designation: "Founder",
+    company: "Pawdrip",
   },
 ];
+
+const projects = [
+  {
+    url: "",
+    projectTitle: "The RouteSeekers",
+    projectDescription: "Tour & Travels",
+  },
+  {
+    url: "",
+    projectTitle: "PawDrip",
+    projectDescription: "Pet",
+  },
+  {
+    url: "",
+    projectTitle: "Your Turn 2 Speak",
+    projectDescription: "Online Meeting Platform",
+  }
+]
 
 const HomePage = () => {
   const headingRef = useRef(null);
@@ -118,7 +136,7 @@ const HomePage = () => {
         <section className="hero">
           <div className="hero-top" ref={headingRef}>
             <h1>
-              AWARD WINNING <br /> SOFTWARE DEV <br /> STUDIO
+              NEXT-GEN <br /> SOFTWARE DEV <br /> STUDIO.
             </h1>
 
             {/* Parallax Promo Video overlaying h1 */}
@@ -162,11 +180,11 @@ const HomePage = () => {
                   </span>
                 </p>
                 <p>
-                  <span>Clutch</span>
+                  <span>Google</span>
                   <span className="pl-50 lh-2">30 REVIEWS</span>
                 </p>
               </div>
-              <div className="content-right">
+              <div className="content-right" style={{ display: "none" }}>
                 <p>
                   <span>REVIEWED ON</span>
                   <span>
@@ -185,9 +203,9 @@ const HomePage = () => {
             </div>
             <div className="bottom-content">
               <p>
-                We design and develop digital products & services that drive{" "}
+                We develop and design digital solutions that foster real {" "}
                 <br />
-                real business value & improve customer experiences.
+                business growth and enhance customer satisfaction.
               </p>
             </div>
             {/* Button Section */}
@@ -226,14 +244,15 @@ const HomePage = () => {
           <div className="mission-bottom">
             <div className="description">
               <h1>
-                We are Abstertek. We are passionate about startups. Let us use
-                our experience in the blockchain and Web3 industry to help grow
-                and shape your ideas into reality.
+                We are Abstertek, we are dedicated to empowering businesses and startups to
+                thrive in the digital landscape. Our mission is to provide digital tailored solutions for
+                you, enabling you to focus on what you do best: growing
+                your brand.
               </h1>
             </div>
             <div className="link">
               <a href="">
-                LEARN ABOUT <FaChevronRight />
+                LEARN ABOUT US <FaChevronRight />
               </a>
             </div>
           </div>
@@ -244,21 +263,21 @@ const HomePage = () => {
           <h2 className="work-heading">WORK</h2>
 
           <div className="work-images">
-            {[1, 2, 3].map((item) => (
+            {projects.map((item) => (
               <div key={item} className="work-image-container">
                 <img
                   src={workBg}
-                  alt={`Project ${item}`}
+                  alt={`Project ${item.projectTitle}`}
                   className="work-image"
                 />
                 <div className="image-overlay">
-                  <p className="overlay-title">PROJECT {item} TITLE</p>
+                  <p className="overlay-title">{item.projectTitle}</p>
                   <p className="overlay-description">
-                    THIS IS SHORT DESCRIPTION NUMBER {item}.
+                    {item.projectDescription}
                   </p>
-                  <a href="#" className="overlay-link">
+                  {/* <a href="#" className="overlay-link">
                     VIEW CASE STUDY <FaArrowRight className="tilted-arrow" />
-                  </a>
+                  </a> */}
                 </div>
               </div>
             ))}
@@ -306,6 +325,7 @@ const HomePage = () => {
                   </div>
                   <p className="review-quote">&quot; {review.quote} &quot;</p>
                   <p className="review-service">{review.service}</p>
+                  <p className="review-service">{review.name}</p>
                   <p className="review-client">
                     {review.designation} at {review.company}
                   </p>
