@@ -49,8 +49,8 @@
 /* Style for parallax promo section */
 .promo-section {
   position: absolute;
-  top: 20%; /* Adjust the overlay to position it on the h1 */
-  left: 27%;
+  top: 60%; /* Adjust the overlay to position it on the h1 */
+  left: 51%;
   transform: translate(-50%, -50%); /* Centering */
   width: 60vw; /* Make width responsive */
   height: 30vw; /* Make height responsive */

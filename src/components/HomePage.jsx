@@ -1,77 +1,80 @@
-import { useEffect, useState, useRef } from "react";
-import { ParallaxProvider, Parallax } from "react-scroll-parallax";
+import React, { useEffect, useState, useRef } from "react";
 import { FaStar, FaArrowRight, FaChevronRight } from "react-icons/fa";
-import React from "react";
 import Header from "../layouts/Header/Header";
 import Footer from "../layouts/Footer/Footer";
 import "../../src/index.css";
-import promoVideo from "../assets/Abstertek_LOGO_RENDER.mp4"; // Correct video import
-import partnerLogo from "../assets/partner1.jpg"; // Correct import import
+import promoVideo from "../assets/Abstertek_LOGO_RENDER.mp4";
+import partnerLogo from "../assets/partner1.jpg";
 import workBg from "../assets/workBg.jpg";
+
 const HomePage = () => {
-  const headingRef = useRef(null);
-  const buttonRef = useRef(null);
-  const [isHeadingVisible, setIsHeadingVisible] = useState(true);
+  const videoRef = useRef(null);
+  const videoFixedRef = useRef(null);
+  const partnerListRef = useRef(null);
+  const [isFixed, setIsFixed] = useState(true);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        setIsHeadingVisible(entry.isIntersecting);
-      },
-      {
-        root: null, // observe within the viewport
-        threshold: 0.1, // trigger when 10% of the heading is visible
-      }
-    );
+    const handleScroll = () => {
+      if (!partnerListRef.current || !videoRef.current || !videoFixedRef.current) return;
 
-    if (headingRef.current) {
-      observer.observe(headingRef.current);
-    }
+      const scrollPosition = window.scrollY;
+      const partnerListRect = partnerListRef.current.getBoundingClientRect();
+      const maxScroll = partnerListRect.top + window.scrollY - window.innerHeight;
 
-    return () => {
-      if (headingRef.current) {
-        observer.unobserve(headingRef.current);
+      // Calculate scroll progress
+      const progress = Math.min(scrollPosition / maxScroll, 1);
+      setScrollProgress(progress);
+
+      if (partnerListRect.top <= window.innerHeight && isFixed) {
+        setIsFixed(false);
+        videoFixedRef.current.appendChild(videoRef.current);
+        videoRef.current.style.position = "relative";
+        videoRef.current.style.top = "auto";
+        videoRef.current.style.left = "auto";
+        videoRef.current.style.transform = "none";
+        videoRef.current.style.width = "100%";
+        videoRef.current.style.height = "100%";
+      } else if (partnerListRect.top > window.innerHeight && !isFixed) {
+        setIsFixed(true);
+        document.querySelector('.video-container').appendChild(videoRef.current);
       }
     };
-  }, []);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isFixed]);
+
+  const videoSize = isFixed
+    ? Math.max(200, 200 + 300 * scrollProgress) // Increase from 200 to 500
+    : "100%"; // Height when in video-fixed div
+
+  const videoStyle = isFixed
+    ? {
+        position: "fixed",
+        top: "50%",
+        left: "50%",
+        transform: `translate(-50%, -50%)`,
+        width: `${videoSize}px`,
+        height: `${videoSize}px`,
+        transition: "all 0.3s ease-out",
+      }
+    : {
+        width: "100%",
+        height: "100%",
+        transition: "all 0.3s ease-out-in",
+      };
 
   return (
-    <ParallaxProvider>
+    <>
       <Header />
       <main>
         {/* Hero Section */}
         <section className="hero">
-          <div className="hero-top" ref={headingRef}>
+          <div className="hero-top">
             <h1>
               AWARD WINNING <br /> SOFTWARE DEV <br /> STUDIO
             </h1>
-
-            {/* Parallax Promo Video overlaying h1 */}
-            {isHeadingVisible && (
-              <Parallax
-                className="promo-section"
-                speed={-5}
-                scale={[0.75, 1]} 
-                translateY={["-50px", "0px"]}
-              >
-                <div className="promo-overlay">
-                  <div className="video-container">
-                    <video
-                      width="100%"
-                      height="100%"
-                      controls
-                      loop
-                      autoPlay
-                      muted
-                    >
-                      <source src={promoVideo} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-                </div>
-              </Parallax>
-            )}
           </div>
 
           <div className="hero-bottom">
@@ -116,27 +119,38 @@ const HomePage = () => {
                 real business value & improve customer experiences.
               </p>
             </div>
-            {/* Button Section */}
-            <div className="btn-container" ref={buttonRef}>
+            <div className="btn-container">
               <a href="#" className="cta-btn">
                 LET&#39;S TALK <FaArrowRight />
               </a>
             </div>
-
-            {/* Conditionally render the video beneath the button */}
-            {!isHeadingVisible && (
-              <div className="video-container">
-                <video width="100%" height="100%" controls loop autoPlay muted>
-                  <source src={promoVideo} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            )}
           </div>
         </section>
 
+        {/* Video Section */}
+        <div className="video-container">
+          <video
+            ref={videoRef}
+            style={videoStyle}
+            // controls
+            loop
+            autoPlay
+            muted
+          >
+            <source src={promoVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        {/* Video Fixed Div */}
+        <div
+          ref={videoFixedRef}
+          style={{height:"400px",width:"1899px",border:"2px solid red"}}
+          className="video-fixed"
+        ></div>
+
         {/* Partners Section */}
-        <section className="partner-list">
+        <section className="partner-list" ref={partnerListRef}>
           <img className="partner" src={partnerLogo} alt="p1" />
           <img className="partner" src={partnerLogo} alt="p2" />
           <img className="partner" src={partnerLogo} alt="p3" />
@@ -198,7 +212,7 @@ const HomePage = () => {
         </section>
       </main>
       <Footer />
-    </ParallaxProvider>
+    </>
   );
 };
 
