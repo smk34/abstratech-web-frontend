@@ -4,7 +4,23 @@ import workBg from "../assets/workBg.jpg";
 import Header from "../layouts/Header/Header";
 import Footer from "../layouts/Footer/Footer";
 
-
+const projects = [
+  {
+    url: "src/assets/therouteseeker.png",
+    projectTitle: "The RouteSeekers",
+    projectDescription: "Tour & Travels",
+  },
+  {
+    url: "",
+    projectTitle: "PawDrip",
+    projectDescription: "Pet",
+  },
+  {
+    url: "src/assets/your-turn-to-speak.png",
+    projectTitle: "Your Turn 2 Speak",
+    projectDescription: "Online Meeting Platform",
+  }
+]
 
 const Portfolio = () => {
   return (
@@ -14,24 +30,24 @@ const Portfolio = () => {
         <h2 className="work-heading">WORK</h2>
 
         <div className="work-images">
-          {[1, 2, 3].map((item) => (
-            <div key={item} className="work-image-container">
-              <img
-                src={workBg}
-                alt={`Project ${item}`}
-                className="work-image"
-              />
-              <div className="image-overlay">
-                <p className="overlay-title">PROJECT {item} TITLE</p>
-                <p className="overlay-description">
-                  THIS IS SHORT DESCRIPTION NUMBER {item}.
-                </p>
-                <a href="#" className="overlay-link">
-                  VIEW CASE STUDY <FaArrowRight className="tilted-arrow" />
-                </a>
+        {projects.map((item) => (
+              <div key={item} className="work-image-container">
+                <img
+                  src={item.url || workBg}
+                  alt={`Project ${item.projectTitle}`}
+                  className="work-image"
+                />
+                <div className="image-overlay">
+                  <p className="overlay-title">{item.projectTitle}</p>
+                  <p className="overlay-description">
+                    {item.projectDescription}
+                  </p>
+                  {/* <a href="#" className="overlay-link">
+                    VIEW CASE STUDY <FaArrowRight className="tilted-arrow" />
+                  </a> */}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
 
         <div className="view-project">

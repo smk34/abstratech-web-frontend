@@ -8,7 +8,6 @@ import "../../src/index.css";
 import promoVideo from "../assets/Abstertek_LOGO_RENDER.mp4"; // Correct video import
 import partnerLogo from "../assets/partner1.jpg"; // Correct import import
 import workBg from "../assets/workBg.jpg";
-
 // dummy review
 const reviews = [
   {
@@ -42,7 +41,7 @@ const reviews = [
 
 const projects = [
   {
-    url: "",
+    url: "src/assets/therouteseeker.png",
     projectTitle: "The RouteSeekers",
     projectDescription: "Tour & Travels",
   },
@@ -52,9 +51,24 @@ const projects = [
     projectDescription: "Pet",
   },
   {
-    url: "",
+    url: "src/assets/your-turn-to-speak.png",
     projectTitle: "Your Turn 2 Speak",
     projectDescription: "Online Meeting Platform",
+  }
+]
+
+const partner = [
+  {
+    url: "src/assets/therouteseekers.png"
+  },
+  {
+    url: "src/assets/ROYAL-COLOR-black.png"
+  },
+  {
+    url: "src/assets/pawdrip.png"
+  },
+  {
+    url: "src/assets/yourturn2speak.png"
   }
 ]
 
@@ -229,11 +243,11 @@ const HomePage = () => {
 
         {/* Partners Section */}
         <section className="partner-list">
-          <img className="partner" src={partnerLogo} alt="p1" />
-          <img className="partner" src={partnerLogo} alt="p2" />
-          <img className="partner" src={partnerLogo} alt="p3" />
-          <img className="partner" src={partnerLogo} alt="p4" />
-          <img className="partner" src={partnerLogo} alt="p5" />
+        {partner.map((item) => (
+          <div key={item}>
+          <img className="partner" src={item.url} alt="p1" />
+          </div>
+        ))}
         </section>
 
         {/* Mission Section */}
@@ -266,7 +280,7 @@ const HomePage = () => {
             {projects.map((item) => (
               <div key={item} className="work-image-container">
                 <img
-                  src={workBg}
+                  src={item.url || workBg}
                   alt={`Project ${item.projectTitle}`}
                   className="work-image"
                 />

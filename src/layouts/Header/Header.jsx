@@ -13,6 +13,7 @@ const Header = () => {
 
   // Check active tab based on the current location
   const getActiveTab = (path) => (location.pathname === path ? "active" : "");
+  
 
   return (
     <header>

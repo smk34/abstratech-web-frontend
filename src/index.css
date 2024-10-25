@@ -285,8 +285,8 @@
 .partner {
   width: 100%;
   height: 100%;
-  max-width: 10rem;
-  max-height: 10rem;
+  max-width: 20rem;
+  max-height: 20rem;
   object-fit: contain; /* Ensures the logos maintain aspect ratio */
 }
 
