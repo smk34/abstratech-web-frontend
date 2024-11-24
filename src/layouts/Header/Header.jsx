@@ -41,6 +41,11 @@ const Header = () => {
                 Services
               </Link>
             </li>
+            <li className={`tab-items ${getActiveTab("/about")}`}>
+              <Link to="/about" onClick={() => setMenuOpen(false)}>
+                About
+              </Link>
+            </li>
             {/* <li className={`tab-items ${getActiveTab("/about")}`}>
               <Link to="/about" onClick={() => setMenuOpen(false)}>
                 About
