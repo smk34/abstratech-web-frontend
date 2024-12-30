@@ -39,7 +39,7 @@
   animation: fadeIn 1s ease-in-out forwards;
 }
 .hero-top h1 {
-  font-size: 10rem;
+  font-size: 12rem;
   line-height: 1.1;
   animation: slideIn 1s ease-in-out forwards;
   position: relative;
@@ -271,12 +271,14 @@
 /* Partners */
 .partner-list {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   background-color: #fff;
   padding: 7rem 2rem;
   flex-wrap: wrap; /* Allow the items to wrap for small screens */
   gap: 1.5rem; /* Add some space between the images */
+  min-height: 200px;
 }
 
 .partner {
@@ -620,5 +622,254 @@
 
   .view-more-btn {
     font-size: 0.9rem;
+  }
+}
+
+.review {
+  padding: 15rem 3rem;
+}
+
+.review h1 {
+  font-size: 4rem;
+  padding: 2rem;
+  text-align: start;
+}
+
+.review-slider {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.review-left {
+  flex: 1;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: left;
+}
+
+.review-left p {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.review-right {
+  flex: 4;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.review-content {
+  min-width: 100%;
+  text-align: center;
+  padding-left: 12rem;
+}
+
+.review-stars {
+  margin-bottom: 2rem;
+  width: 50%;
+  text-align: left;
+}
+
+/* .review-quote {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  width: 70%;
+  text-align: left;
+} */
+.review-quote {
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  width: 85%;
+  text-align: left;
+}
+
+.review-service {
+  font-size: 2rem;
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.review-client {
+  text-align: left;
+  font-size: 1.6rem;
+  color: #000;
+  font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .review-slider {
+    padding: 4rem 1.5rem;
+  }
+
+  .review-left p {
+    font-size: 2.3rem;
+  }
+
+  .review-content {
+    padding-left: 8rem;
+  }
+
+  .review-quote {
+    font-size: 2.2rem;
+  }
+
+  .review-service {
+    font-size: 1.8rem;
+  }
+
+  .review-client {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .review {
+    padding: 1.5rem;
+  }
+
+  .review h1 {
+    font-size: 2.5rem;
+  }
+
+  .review-slider {
+    flex-direction: column;
+    padding: 3rem 1rem;
+  }
+
+  .review-left {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .review-left p {
+    font-size: 2rem;
+  }
+
+  .review-content {
+    padding-left: 0;
+    padding-top: 2rem;
+  }
+
+  .review-stars {
+    width: 100%;
+    text-align: center;
+  }
+
+  .review-quote {
+    font-size: 2rem;
+    width: 100%;
+  }
+
+  .review-service {
+    font-size: 1.8rem;
+  }
+
+  .review-client {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .review-slider {
+    padding: 2rem 1rem;
+  }
+
+  .review-left p {
+    font-size: 1.8rem;
+  }
+
+  .review-content {
+    padding: 0;
+  }
+
+  .review-quote {
+    font-size: 1.6rem;
+  }
+
+  .review-service {
+    font-size: 1.5rem;
+  }
+
+  .review-client {
+    font-size: 1.2rem;
+  }
+}
+
+/* About.jsx */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Initially hidden */
+  padding-top: 50px;
+  padding-bottom: 50px;
+  transform: translateY(30px); /* Starts slightly below its final position */
+  animation: fadeInUp 1.5s ease-out forwards; /* Smooth animation */
+}
+
+.title {
+  font-size: 20rem;
+  font-weight: bold;
+  margin: 0;
+  color: #000; /* Black text */
+  animation: textGlow 2s ease-in-out infinite alternate; 
+}
+
+.subtitle {
+  font-size: 3.5rem;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 1rem;
+  line-height: 1.6;
+  color: #333; /* Dark gray text */
+  opacity: 0;
+  width: 100%;
+  max-width: 1000px;
+  animation: fadeIn 2s ease-out 1.5s forwards; /* Delayed fade-in */
+}
+
+/* Animations */
+
+/* Fade-in and upward movement for the container */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle glow effect for the title */
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Simple fade-in for the subtitle */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

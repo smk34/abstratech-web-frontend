@@ -1,0 +1,164 @@
+/* Scroll Section */
+.scroll-section {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    scroll-behavior: smooth;
+    padding: 8rem 3rem; /* Adjust padding for smaller screens */
+  }
+  
+  .left-part {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100vh;
+  }
+  
+  .heading {
+    padding: 2rem;
+  }
+  
+  .heading h1 {
+    font-size: 4rem; /* Reduce font size for responsiveness */
+  }
+  
+  .counter {
+    margin-top: 0rem;
+    font-size: 42rem; /* Reduce size for smaller screens */
+    font-weight: bold;
+    color: #ccc;
+    transition: transform 0.5s ease, color 0.5s ease;
+  }
+  
+  .right-part {
+    width: 60%;
+    padding: 2rem;
+    overflow-y: auto;
+  }
+  
+  .content-section {
+    height: 100vh; /* Keep full height for each section */
+    margin-bottom: 2rem;
+    padding: 2rem;
+    transition: transform 0.3s ease-in-out;
+    border-top: 0.3rem solid #000;
+  }
+  
+  .content-section h1 {
+    font-size: 4rem; /* Slightly smaller font size for responsive layout */
+    padding-bottom: 2rem;
+  }
+  
+  .content-section p {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+    line-height: 1.4;
+    font-weight: 600;
+  }
+  
+  .sevice-link a {
+    font-size: 1.8rem; /* Adjust link font size for mobile */
+    color: #000;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    margin-top: 4rem;
+  }
+  
+  /* Responsive for tablets and smaller screens */
+  @media (max-width: 1024px) {
+    .scroll-section {
+      padding: 5rem 2rem;
+    }
+  
+    .left-part {
+      width: 30%;
+    }
+  
+    .right-part {
+      width: 70%;
+    }
+  
+    .counter {
+      font-size: 18rem; /* Reduce counter size for medium screens */
+    }
+  
+    .content-section h1 {
+      font-size: 3.5rem;
+    }
+  
+    .content-section p {
+      font-size: 1.8rem;
+    }
+  }
+  
+  /* Responsive for mobile devices */
+  @media (max-width: 768px) {
+    .scroll-section {
+      flex-direction: column;
+      padding: 4rem 1rem;
+    }
+  
+    .left-part {
+      width: 100%;
+      height: auto;
+      position: relative;
+      margin-bottom: 2rem;
+    }
+  
+    .counter {
+      font-size: 12rem; /* Significantly smaller for mobile devices */
+    }
+  
+    .right-part {
+      width: 100%;
+      padding: 1rem;
+    }
+  
+    .content-section {
+      height: auto; /* Auto height to fit content */
+      margin-bottom: 2rem;
+    }
+  
+    .content-section h1 {
+      font-size: 3rem; /* Adjust section title for mobile */
+    }
+  
+    .content-section p {
+      font-size: 1.6rem;
+    }
+  
+    .sevice-link a {
+      font-size: 1.6rem; /* Adjust link font size for mobile */
+    }
+  }
+  
+  /* Responsive for very small screens (below 480px) */
+  @media (max-width: 480px) {
+    .scroll-section {
+      padding: 3rem 1rem;
+    }
+  
+    .heading h1 {
+      font-size: 3rem; /* Further reduce heading size */
+    }
+  
+    .counter {
+      font-size: 10rem; /* Smaller counter for very small screens */
+      margin-top: -4rem;
+    }
+  
+    .content-section h1 {
+      font-size: 2.5rem; /* Adjust font size for small screens */
+    }
+  
+    .content-section p {
+      font-size: 1.4rem; /* Smaller font for better readability */
+    }
+  
+    .sevice-link a {
+      font-size: 1.4rem;
+    }
+  }
+  
