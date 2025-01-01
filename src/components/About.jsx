@@ -35,7 +35,7 @@ function About() {
     {
       id: 1,
       quote:
-        "I am thrilled with the exceptional website Abstertek created for The Route Seekers! Their team demonstrated professionalism, creativity, and a keen understanding of our vision. The final product exceeds our expectations and is user-friendly. Highly recommended for anyone looking to elevate their online presence",
+        "I am thrilled with the exceptional website Abstertek created for The Route Seekers! Their team demonstrated professionalism, creativity, and a keen understanding of our vision.",
       //service: "WEB DEVELOPMENT",
       name: "Namrita Singh",
       designation: "Managing Director",
@@ -44,7 +44,7 @@ function About() {
     {
       id: 2,
       quote:
-        "Abstertek has significantly enhanced our digital presence. Their expertise in digital arts has transformed our social media platforms with captivating visuals that engage and resonate with our audience. The team’s creativity and prompt communication make every collaboration a delight. For brands looking to make a lasting impact in the digital space, Abstertek is the ideal partner!”",
+        "I am thrilled with the exceptional website Abstertek created for The Route Seekers! Their team demonstrated professionalism, creativity, and a keen understanding of our vision.",
       //service: "APP DEVELOPMENT",
       name: "Akshat Kacholia",
       designation: "Managing Director",
@@ -53,7 +53,7 @@ function About() {
     {
       id: 3,
       quote:
-        "Abstertek has been a game-changer for us. Their expertise, technical skills, and creative vision brought our website to life in a way we never thought possible. Without their guidance and attention to detail, we would have struggled to create a platform that truly represents our brand. I can’t thank Classified as Highly Confidenial them enough for their support!",
+        "I am thrilled with the exceptional website Abstertek created for The Route Seekers! Their team demonstrated professionalism, creativity, and a keen understanding of our vision.",
       //service: "UI/UX DESIGN",
       name: "Vaibhav Jha",
       designation: "Founder",
@@ -63,48 +63,48 @@ function About() {
 
 
   // Review states
-    const [currentReview, setCurrentReview] = useState(0);
-    const [isDragging, setIsDragging] = useState(false);
-    const sliderRef = useRef(null);
-    const startPos = useRef(0);
-  
-   
-  
-    // Review Section Code
-    // Auto-slide every 5 seconds
-    useEffect(() => {
-      const autoSlide = setInterval(() => {
-        setCurrentReview((prevReview) => (prevReview + 1) % reviews.length);
-      }, 5000);
-  
-      return () => clearInterval(autoSlide);
-    }, []);
-  
-    const handleDragStart = (e) => {
-      setIsDragging(true);
-      startPos.current = e.clientX || e.touches[0].clientX;
-    };
-  
-    const handleDragEnd = (e) => {
-      setIsDragging(false);
-    };
-  
-    const handleDragMove = (e) => {
-      if (!isDragging) return;
-  
-      const currentX = e.clientX || e.touches[0].clientX;
-      const delta = startPos.current - currentX;
-  
-      if (delta > 50) {
-        setCurrentReview((prevReview) => (prevReview + 1) % reviews.length);
-      } else if (delta < -50) {
-        setCurrentReview(
-          (prevReview) => (prevReview - 1 + reviews.length) % reviews.length
-        );
-      }
-  
-      setIsDragging(false);
-    };
+  const [currentReview, setCurrentReview] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const sliderRef = useRef(null);
+  const startPos = useRef(0);
+
+
+
+  // Review Section Code
+  // Auto-slide every 5 seconds
+  useEffect(() => {
+    const autoSlide = setInterval(() => {
+      setCurrentReview((prevReview) => (prevReview + 1) % reviews.length);
+    }, 5000);
+
+    return () => clearInterval(autoSlide);
+  }, []);
+
+  const handleDragStart = (e) => {
+    setIsDragging(true);
+    startPos.current = e.clientX || e.touches[0].clientX;
+  };
+
+  const handleDragEnd = (e) => {
+    setIsDragging(false);
+  };
+
+  const handleDragMove = (e) => {
+    if (!isDragging) return;
+
+    const currentX = e.clientX || e.touches[0].clientX;
+    const delta = startPos.current - currentX;
+
+    if (delta > 50) {
+      setCurrentReview((prevReview) => (prevReview + 1) % reviews.length);
+    } else if (delta < -50) {
+      setCurrentReview(
+        (prevReview) => (prevReview - 1 + reviews.length) % reviews.length
+      );
+    }
+
+    setIsDragging(false);
+  };
   return (
     <>
       <Header />
@@ -167,6 +167,169 @@ function About() {
             />
           </div>
         </div>
+
+        <section className="review" style={{ width: '100%', padding: '20px 0', backgroundColor: '#f9f9f9' }}>
+  <h1 >OUR CLIENTS</h1>
+  <Container>
+  <Row
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    // padding: "10px", // Optional: Add padding around the row
+    margin: "0 auto", // Optional: Center the row
+  }}
+>
+  <Col
+    className=""
+    style={{
+      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Add shadow
+      borderRadius: "8px", // Optional: Add rounded corners
+      width: "100%", // Ensure responsive scaling
+      maxWidth: "200px", // Limit column width
+      height: "100px", // Set fixed height for the column
+      margin: "10px",
+      display: "flex", // Ensure flex behavior
+      alignItems: "center", // Vertically center image
+      justifyContent: "center", // Horizontally center image
+      border: "1px solid gray", // Border for each column
+    }}
+  >
+    <img
+      src={
+        "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100"
+      }
+      alt="Client 1"
+      style={{
+        width: "100%", // Ensure image is responsive and fits within column
+        height: "auto", // Maintain aspect ratio
+        maxWidth: "180px", // Optional: Limit image width
+        padding: "50px",
+      }}
+    />
+  </Col>
+  <Col
+    className=""
+    style={{
+      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Add shadow
+      borderRadius: "8px", // Optional: Add rounded corners
+      width: "100%", // Ensure responsive scaling
+      maxWidth: "200px", // Limit column width
+      height: "100px", // Set fixed height for the column
+      margin: "10px",
+      display: "flex", // Ensure flex behavior
+      alignItems: "center", // Vertically center image
+      justifyContent: "center", // Horizontally center image
+      border: "1px solid gray", // Border for each column
+    }}
+  >
+    <img
+      src={
+        "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100"
+      }
+      alt="Client 2"
+      style={{
+        width: "100%", // Ensure image is responsive and fits within column
+        height: "auto", // Maintain aspect ratio
+        maxWidth: "180px", // Optional: Limit image width
+        padding: "50px",
+      }}
+    />
+  </Col>
+  <Col
+    className=""
+    style={{
+      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Add shadow
+      borderRadius: "8px", // Optional: Add rounded corners
+      width: "100%", // Ensure responsive scaling
+      maxWidth: "200px", // Limit column width
+      height: "100px", // Set fixed height for the column
+      margin: "10px",
+      display: "flex", // Ensure flex behavior
+      alignItems: "center", // Vertically center image
+      justifyContent: "center", // Horizontally center image
+      border: "1px solid gray", // Border for each column
+    }}
+  >
+    <img
+      src={
+        "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100"
+      }
+      alt="Client 3"
+      style={{
+        width: "100%", // Ensure image is responsive and fits within column
+        height: "auto", // Maintain aspect ratio
+        maxWidth: "180px", // Optional: Limit image width
+        padding: "50px",
+      }}
+    />
+  </Col>
+  <Col
+    className=""
+    style={{
+      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Add shadow
+      borderRadius: "8px", // Optional: Add rounded corners
+      width: "100%", // Ensure responsive scaling
+      maxWidth: "200px", // Limit column width
+      height: "100px", // Set fixed height for the column
+      margin: "10px",
+      display: "flex", // Ensure flex behavior
+      alignItems: "center", // Vertically center image
+      justifyContent: "center", // Horizontally center image
+      border: "1px solid gray", // Border for each column
+    }}
+  >
+    <img
+      src={
+        "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100"
+      }
+      alt="Client 4"
+      style={{
+        width: "100%", // Ensure image is responsive and fits within column
+        height: "auto", // Maintain aspect ratio
+        maxWidth: "180px", // Optional: Limit image width
+        padding: "50px",
+      }}
+    />
+  </Col>
+  <Col
+    className=""
+    style={{
+      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Add shadow
+      borderRadius: "8px", // Optional: Add rounded corners
+      width: "100%", // Ensure responsive scaling
+      maxWidth: "200px", // Limit column width
+      height: "100px", // Set fixed height for the column
+      margin: "10px",
+      display: "flex", // Ensure flex behavior
+      alignItems: "center", // Vertically center image
+      justifyContent: "center", // Horizontally center image
+      border: "1px solid gray", // Border for each column
+    }}
+  >
+    <img
+      src={
+        "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100"
+      }
+      alt="Client 5"
+      style={{
+        width: "100%", // Ensure image is responsive and fits within column
+        height: "auto", // Maintain aspect ratio
+        maxWidth: "180px", // Optional: Limit image width
+        padding: "50px",
+      }}
+    />
+  </Col>
+</Row>
+
+
+</Container>
+
+</section>
+
+
+
+
+       
 
 
         {/* Reviews */}
