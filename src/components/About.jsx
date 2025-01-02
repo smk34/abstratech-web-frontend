@@ -168,169 +168,259 @@ function About() {
           </div>
         </div>
 
-        <section className="review" style={{ width: '100%', padding: '20px 0', backgroundColor: '#f9f9f9' }}>
-  <h1 >OUR CLIENTS</h1>
-  <Container>
-  <Row
-  style={{
-    display: "flex",
-    justifyContent: "center",
-    // padding: "10px", // Optional: Add padding around the row
-    margin: "0 auto", // Optional: Center the row
-  }}
->
-  <Col
-    className=""
-    style={{
-      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Add shadow
-      borderRadius: "8px", // Optional: Add rounded corners
-      width: "100%", // Ensure responsive scaling
-      maxWidth: "200px", // Limit column width
-      height: "100px", // Set fixed height for the column
-      margin: "10px",
-      display: "flex", // Ensure flex behavior
-      alignItems: "center", // Vertically center image
-      justifyContent: "center", // Horizontally center image
-      border: "1px solid gray", // Border for each column
-    }}
-  >
-    <img
-      src={
-        "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100"
-      }
-      alt="Client 1"
-      style={{
-        width: "100%", // Ensure image is responsive and fits within column
-        height: "auto", // Maintain aspect ratio
-        maxWidth: "180px", // Optional: Limit image width
-        padding: "50px",
-      }}
-    />
-  </Col>
-  <Col
-    className=""
-    style={{
-      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Add shadow
-      borderRadius: "8px", // Optional: Add rounded corners
-      width: "100%", // Ensure responsive scaling
-      maxWidth: "200px", // Limit column width
-      height: "100px", // Set fixed height for the column
-      margin: "10px",
-      display: "flex", // Ensure flex behavior
-      alignItems: "center", // Vertically center image
-      justifyContent: "center", // Horizontally center image
-      border: "1px solid gray", // Border for each column
-    }}
-  >
-    <img
-      src={
-        "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100"
-      }
-      alt="Client 2"
-      style={{
-        width: "100%", // Ensure image is responsive and fits within column
-        height: "auto", // Maintain aspect ratio
-        maxWidth: "180px", // Optional: Limit image width
-        padding: "50px",
-      }}
-    />
-  </Col>
-  <Col
-    className=""
-    style={{
-      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Add shadow
-      borderRadius: "8px", // Optional: Add rounded corners
-      width: "100%", // Ensure responsive scaling
-      maxWidth: "200px", // Limit column width
-      height: "100px", // Set fixed height for the column
-      margin: "10px",
-      display: "flex", // Ensure flex behavior
-      alignItems: "center", // Vertically center image
-      justifyContent: "center", // Horizontally center image
-      border: "1px solid gray", // Border for each column
-    }}
-  >
-    <img
-      src={
-        "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100"
-      }
-      alt="Client 3"
-      style={{
-        width: "100%", // Ensure image is responsive and fits within column
-        height: "auto", // Maintain aspect ratio
-        maxWidth: "180px", // Optional: Limit image width
-        padding: "50px",
-      }}
-    />
-  </Col>
-  <Col
-    className=""
-    style={{
-      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Add shadow
-      borderRadius: "8px", // Optional: Add rounded corners
-      width: "100%", // Ensure responsive scaling
-      maxWidth: "200px", // Limit column width
-      height: "100px", // Set fixed height for the column
-      margin: "10px",
-      display: "flex", // Ensure flex behavior
-      alignItems: "center", // Vertically center image
-      justifyContent: "center", // Horizontally center image
-      border: "1px solid gray", // Border for each column
-    }}
-  >
-    <img
-      src={
-        "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100"
-      }
-      alt="Client 4"
-      style={{
-        width: "100%", // Ensure image is responsive and fits within column
-        height: "auto", // Maintain aspect ratio
-        maxWidth: "180px", // Optional: Limit image width
-        padding: "50px",
-      }}
-    />
-  </Col>
-  <Col
-    className=""
-    style={{
-      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Add shadow
-      borderRadius: "8px", // Optional: Add rounded corners
-      width: "100%", // Ensure responsive scaling
-      maxWidth: "200px", // Limit column width
-      height: "100px", // Set fixed height for the column
-      margin: "10px",
-      display: "flex", // Ensure flex behavior
-      alignItems: "center", // Vertically center image
-      justifyContent: "center", // Horizontally center image
-      border: "1px solid gray", // Border for each column
-    }}
-  >
-    <img
-      src={
-        "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100"
-      }
-      alt="Client 5"
-      style={{
-        width: "100%", // Ensure image is responsive and fits within column
-        height: "auto", // Maintain aspect ratio
-        maxWidth: "180px", // Optional: Limit image width
-        padding: "50px",
-      }}
-    />
-  </Col>
-</Row>
+      {/* <section className="review" style={{ width: '100%', padding: '20px 0', backgroundColor: '#f9f9f9' }}>
+        <h1 >OUR CLIENTS</h1>
+        <Container>
+          <Row
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              // padding: "10px", // Optional: Add padding around the row
+              margin: "0 auto", // Optional: Center the row
+            }}
+          >
+            <Col
+              className=""
+              style={{
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Add shadow
+                borderRadius: "8px", // Optional: Add rounded corners
+                width: "100%", // Ensure responsive scaling
+                maxWidth: "200px", // Limit column width
+                height: "100px", // Set fixed height for the column
+                margin: "10px",
+                display: "flex", // Ensure flex behavior
+                alignItems: "center", // Vertically center image
+                justifyContent: "center", // Horizontally center image
+                border: "1px solid gray", // Border for each column
+              }}
+            >
+              <img
+                src={
+                  "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100"
+                }
+                alt="Client 1"
+                style={{
+                  width: "100%", // Ensure image is responsive and fits within column
+                  height: "auto", // Maintain aspect ratio
+                  maxWidth: "180px", // Optional: Limit image width
+                  padding: "50px",
+                }}
+              />
+            </Col>
+            <Col
+              className=""
+              style={{
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Add shadow
+                borderRadius: "8px", // Optional: Add rounded corners
+                width: "100%", // Ensure responsive scaling
+                maxWidth: "200px", // Limit column width
+                height: "100px", // Set fixed height for the column
+                margin: "10px",
+                display: "flex", // Ensure flex behavior
+                alignItems: "center", // Vertically center image
+                justifyContent: "center", // Horizontally center image
+                border: "1px solid gray", // Border for each column
+              }}
+            >
+              <img
+                src={
+                  "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100"
+                }
+                alt="Client 2"
+                style={{
+                  width: "100%", // Ensure image is responsive and fits within column
+                  height: "auto", // Maintain aspect ratio
+                  maxWidth: "180px", // Optional: Limit image width
+                  padding: "50px",
+                }}
+              />
+            </Col>
+            <Col
+              className=""
+              style={{
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Add shadow
+                borderRadius: "8px", // Optional: Add rounded corners
+                width: "100%", // Ensure responsive scaling
+                maxWidth: "200px", // Limit column width
+                height: "100px", // Set fixed height for the column
+                margin: "10px",
+                display: "flex", // Ensure flex behavior
+                alignItems: "center", // Vertically center image
+                justifyContent: "center", // Horizontally center image
+                border: "1px solid gray", // Border for each column
+              }}
+            >
+              <img
+                src={
+                  "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100"
+                }
+                alt="Client 3"
+                style={{
+                  width: "100%", // Ensure image is responsive and fits within column
+                  height: "auto", // Maintain aspect ratio
+                  maxWidth: "180px", // Optional: Limit image width
+                  padding: "50px",
+                }}
+              />
+            </Col>
+            <Col
+              className=""
+              style={{
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Add shadow
+                borderRadius: "8px", // Optional: Add rounded corners
+                width: "100%", // Ensure responsive scaling
+                maxWidth: "200px", // Limit column width
+                height: "100px", // Set fixed height for the column
+                margin: "10px",
+                display: "flex", // Ensure flex behavior
+                alignItems: "center", // Vertically center image
+                justifyContent: "center", // Horizontally center image
+                border: "1px solid gray", // Border for each column
+              }}
+            >
+              <img
+                src={
+                  "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100"
+                }
+                alt="Client 4"
+                style={{
+                  width: "100%", // Ensure image is responsive and fits within column
+                  height: "auto", // Maintain aspect ratio
+                  maxWidth: "180px", // Optional: Limit image width
+                  padding: "50px",
+                }}
+              />
+            </Col>
+            <Col
+              className=""
+              style={{
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Add shadow
+                borderRadius: "8px", // Optional: Add rounded corners
+                width: "100%", // Ensure responsive scaling
+                maxWidth: "200px", // Limit column width
+                height: "100px", // Set fixed height for the column
+                margin: "10px",
+                display: "flex", // Ensure flex behavior
+                alignItems: "center", // Vertically center image
+                justifyContent: "center", // Horizontally center image
+                border: "1px solid gray", // Border for each column
+              }}
+            >
+              <img
+                src={
+                  "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100"
+                }
+                alt="Client 5"
+                style={{
+                  width: "100%", // Ensure image is responsive and fits within column
+                  height: "auto", // Maintain aspect ratio
+                  maxWidth: "180px", // Optional: Limit image width
+                  padding: "50px",
+                }}
+              />
+            </Col>
+          </Row>
 
 
-</Container>
+        </Container>
 
-</section>
+      </section> */}
 
-
-
-
-       
-
+    <section className="review clients" style={{ width: '100%', padding: '20px 0', backgroundColor: '#f9f9f9' }}>
+      <Container style={{alignItems: 'start', }}>
+        <Row style={{ width: '100%'}}>
+          <Col>
+            <div className="">
+              <h1 >OUR CLIENTS</h1>
+            </div>
+          </Col>
+          <Col>
+            <ul className="ClientsList">
+                <li>
+                  <div className="ClientsList-img">
+                    <img src={ "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100" } alt="Client 5"/>
+                  </div>
+                </li>
+                <li>
+                  <div className="ClientsList-img">
+                    <img src={ "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100" } alt="Client 5"/>
+                  </div>
+                </li>
+                <li>
+                  <div className="ClientsList-img">
+                    <img src={ "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100" } alt="Client 5"/>
+                  </div>
+                </li>
+                <li>
+                  <div className="ClientsList-img">
+                    <img src={ "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100" } alt="Client 5"/>
+                  </div>
+                </li>
+                <li>
+                  <div className="ClientsList-img">
+                    <img src={ "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100" } alt="Client 5"/>
+                  </div>
+                </li>
+                <li>
+                  <div className="ClientsList-img">
+                    <img src={ "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100" } alt="Client 5"/>
+                  </div>
+                </li>
+                <li>
+                  <div className="ClientsList-img">
+                    <img src={ "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100" } alt="Client 5"/>
+                  </div>
+                </li>
+                <li>
+                  <div className="ClientsList-img">
+                    <img src={ "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100" } alt="Client 5"/>
+                  </div>
+                </li>
+                <li>
+                  <div className="ClientsList-img">
+                    <img src={ "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100" } alt="Client 5"/>
+                  </div>
+                </li>
+                <li>
+                  <div className="ClientsList-img">
+                    <img src={ "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100" } alt="Client 5"/>
+                  </div>
+                </li>
+                <li>
+                  <div className="ClientsList-img">
+                    <img src={ "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100" } alt="Client 5"/>
+                  </div>
+                </li>
+                <li>
+                  <div className="ClientsList-img">
+                    <img src={ "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100" } alt="Client 5"/>
+                  </div>
+                </li>
+                <li>
+                  <div className="ClientsList-img">
+                    <img src={ "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100" } alt="Client 5"/>
+                  </div>
+                </li>
+                <li>
+                  <div className="ClientsList-img">
+                    <img src={ "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100" } alt="Client 5"/>
+                  </div>
+                </li>
+                <li>
+                  <div className="ClientsList-img">
+                    <img src={ "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100" } alt="Client 5"/>
+                  </div>
+                </li>
+                <li>
+                  <div className="ClientsList-img">
+                    <img src={ "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100" } alt="Client 5"/>
+                  </div>
+                </li>
+            </ul>
+          </Col>
+        </Row>
+      </Container>
+    </section>
 
         {/* Reviews */}
         <section className="review">
