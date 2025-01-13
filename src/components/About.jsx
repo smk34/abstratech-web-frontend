@@ -105,6 +105,48 @@ function About() {
 
     setIsDragging(false);
   };
+
+
+
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const clientItems = entry.target.querySelectorAll('.ClientsList-img');
+          
+          if (entry.isIntersecting) {
+            // When entering viewport
+            clientItems.forEach((item, index) => {
+              setTimeout(() => {
+                item.classList.add('animate-in');
+              }, index * 100);
+            });
+          } else {
+            // When leaving viewport
+            clientItems.forEach((item) => {
+              item.classList.remove('animate-in');
+            });
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '-50px', // Slightly reduces the trigger area for better timing
+      }
+    );
+  
+    const clientsList = document.querySelector('.ClientsList');
+    if (clientsList) {
+      observer.observe(clientsList);
+    }
+  
+    return () => {
+      if (clientsList) {
+        observer.unobserve(clientsList);
+      }
+    };
+  }, []);
   return (
     <>
       <Header />
@@ -336,7 +378,7 @@ function About() {
           </Col>
           <Col>
             <ul className="ClientsList">
-                <li>
+                <li  className="clientListli">
                   <div className="ClientsList-img">
                     <img src={ "https://techalchemy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fethoventures-light.6f84f779.png&w=1920&q=100" } alt="Client 5"/>
                   </div>
